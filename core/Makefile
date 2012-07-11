@@ -1272,7 +1272,7 @@ else
     OTA_FROM_TARGET_SCRIPT := $(TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT)
 endif
 
-ifneq ($(CM_BUILD),)
+ifneq ($(SOURCERY_BUILD),)
     $(INTERNAL_OTA_PACKAGE_TARGET): backuptool := true
 else
     $(INTERNAL_OTA_PACKAGE_TARGET): backuptool := false
@@ -1299,15 +1299,15 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS) $(SEL
 	   --override_device=$(override_device) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-.PHONY: otapackage bacon
+.PHONY: otapackage sourcery
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
-bacon: otapackage
+sourcery: otapackage
 ifneq ($(TARGET_CUSTOM_RELEASETOOL),)
 	@echo "Running custom releasetool..."
 	$(hide) $(TARGET_CUSTOM_RELEASETOOL)
 else
 	@echo "Running releasetool..."
-	$(hide) ./vendor/cm/tools/squisher
+	$(hide) ./vendor/Sourcery/tools/squisher
 endif
 
 # -----------------------------------------------------------------
