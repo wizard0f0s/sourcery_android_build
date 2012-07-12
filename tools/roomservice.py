@@ -19,13 +19,13 @@ except:
     device = product
 
 if not depsonly:
-    print "Device %s not found. Attempting to retrieve device repository from CyanogenMod Github (http://github.com/CyanogenMod)." % device
+    print "Device %s not found. Attempting to retrieve device repository from TeamSourcery Github (http://github.com/TeamSourcery)." % device
 
 repositories = []
 
 page = 1
 while not depsonly:
-    result = json.loads(urllib2.urlopen("https://api.github.com/users/CyanogenMod/repos?page=%d" % page).read())
+    result = json.loads(urllib2.urlopen("https://api.github.com/users/TeamSourcery/repos?page=%d" % page).read())
     if len(result) == 0:
         break
     for res in result:
@@ -102,12 +102,12 @@ def add_to_manifest(repositories):
         repo_name = repository['repository']
         repo_target = repository['target_path']
         if exists_in_tree(lm, repo_name):
-            print 'CyanogenMod/%s already exists' % (repo_name)
+            print 'TeamSourcery/%s already exists' % (repo_name)
             continue
 
-        print 'Adding dependency: CyanogenMod/%s -> %s' % (repo_name, repo_target)
+        print 'Adding dependency: TeamSourcery/%s -> %s' % (repo_name, repo_target)
         project = ElementTree.Element("project", attrib = { "path": repo_target,
-            "remote": "github", "name": "CyanogenMod/%s" % repo_name, "revision": "ics" })
+            "remote": "github", "name": "TeamSourcery/%s" % repo_name, "revision": "ics" })
 
         if 'branch' in repository:
             project.set('revision',repository['branch'])
@@ -133,7 +133,7 @@ def fetch_dependencies(repo_path):
         fetch_list = []
 
         for dependency in dependencies:
-            if not is_in_manifest("CyanogenMod/%s" % dependency['repository']):
+            if not is_in_manifest("TeamSourcery/%s" % dependency['repository']):
                 fetch_list.append(dependency)
                 syncable_repos.append(dependency['target_path'])
 
@@ -177,4 +177,4 @@ else:
             print "Done"
             sys.exit()
 
-print "Repository for %s not found in the CyanogenMod Github repository list. If this is in error, you may need to manually add it to your local_manifest.xml." % device
+print "Repository for %s not found in the TeamSourcery Github repository list. If this is in error, you may need to manually add it to your local_manifest.xml." % device
