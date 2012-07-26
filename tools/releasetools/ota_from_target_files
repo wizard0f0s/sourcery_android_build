@@ -407,7 +407,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("***********************************************")
   script.Print("*                Team Sourcery                *")
   script.Print("*                                             *")
-  script.Print("*      Very Alhpa Jelly Bean 4.1.1 ROM        *")
+  script.Print("*             Jelly Bean 4.1.1 ROM            *")
   script.Print("*                                             *")
   script.Print("*                                             *")
   script.Print("*                                             *")
@@ -415,7 +415,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*                                             *")
   script.Print("*                                             *")
   script.Print("*                 JBSourcery                  *")
-  script.Print("*                  Alpha 4.1                  *")
+  script.Print("*              1.0 Beta Release               *")
   script.Print("***********************************************")
   script.Print("Hope you Backed up cause its gone now")
 
@@ -457,7 +457,8 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.1, 0)
-  script.Print("TheMagic is coming This is barebones!!")
+  script.Print("This is an open Beta Release!")
+  script.Print("There may be Bugs!, please tell us")
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:
