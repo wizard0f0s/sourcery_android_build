@@ -415,7 +415,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*                                             *")
   script.Print("*                                             *")
   script.Print("*                 JBSourcery                  *")
-  script.Print("*            1.0 Beta 3 PreRelease            *")
+  script.Print("*            1.0 Beta 5 PreRelease            *")
   script.Print("***********************************************")
   script.Print("Hope you Backed up cause its gone now")
 
