@@ -415,9 +415,9 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*       have an easy recovery method          *")
   script.Print("*            if something breaks              *")
   script.Print("*                                             *")
-  script.Print("*   Setting originality standard since 2010   *")
+  script.Print("*    Please goto info center and read news    *")
   script.Print("*                 JBSourcery                  *")
-  script.Print("*                     2.1                     *")
+  script.Print("*                     2.2                     *")
   script.Print("***********************************************")
   script.Print("Hope you Backed up cause its gone now")
 
@@ -459,8 +459,8 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.1, 0)
-  script.Print("JBSourcery Version 2.0")
-  script.Print("Finished adding even more magic!")
+  script.Print("JBSourcery Version 2.2")
+  script.Print("Install of New Magic Complete")
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:
