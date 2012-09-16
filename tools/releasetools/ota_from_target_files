@@ -417,9 +417,10 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*                                             *")
   script.Print("*    Please goto info center and read news    *")
   script.Print("*                 JBSourcery                  *")
-  script.Print("*                     2.2                     *")
+  script.Print("*                     2.3                     *")
   script.Print("***********************************************")
   script.Print("Hope you Backed up cause its gone now")
+  script.Print("The Magic Contnues--Supported Release")
 
   if "selinux_fc" in OPTIONS.info_dict:
     WritePolicyConfig(OPTIONS.info_dict["selinux_fc"], output_zip)
@@ -459,7 +460,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.1, 0)
-  script.Print("JBSourcery Version 2.2")
+  script.Print("JBSourcery Version 2.3")
   script.Print("Install of New Magic Complete")
   device_specific.FullOTA_InstallEnd()
 
