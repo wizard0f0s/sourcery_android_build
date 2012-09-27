@@ -408,7 +408,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*                Team Sourcery                *")
   script.Print("*                                             *")
   script.Print("*             Jelly Bean 4.1.1 ROM            *")
-  script.Print("*               JRO03L-4.1.1-r4               *")
+  script.Print("*               JRO03R-4.1.1-r6               *")
   script.Print("*                                             *")
   script.Print("*        Please download the restore mod      *")
   script.Print("* in tools before using any mods so you will  *")
@@ -417,7 +417,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*                                             *")
   script.Print("*    Please goto info center and read news    *")
   script.Print("*                 JBSourcery                  *")
-  script.Print("*                     2.3                     *")
+  script.Print("*                    2.3.5                    *")
   script.Print("***********************************************")
   script.Print("Hope you Backed up cause its gone now")
   script.Print("The Magic Contnues--Supported Release")
@@ -460,7 +460,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.1, 0)
-  script.Print("JBSourcery Version 2.3")
+  script.Print("JBSourcery Version 2.3.5")
   script.Print("Install of New Magic Complete")
   device_specific.FullOTA_InstallEnd()
 
