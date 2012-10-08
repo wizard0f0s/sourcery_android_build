@@ -415,9 +415,14 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*       have an easy recovery method          *")
   script.Print("*            if something breaks              *")
   script.Print("*                                             *")
+  script.Print("*    We Welcome Morfic and Trinity Kernel     *")
+  script.Print("*                     &                       *")
+  script.Print("*              MyComputerDoctor               *")
+  script.Print("*              To Team Sourcery               *")
+  script.Print("*                                             *")
   script.Print("*    Please goto info center and read news    *")
   script.Print("*                 JBSourcery                  *")
-  script.Print("*                    2.3.5                    *")
+  script.Print("*                     2.4                     *")
   script.Print("***********************************************")
   script.Print("Hope you Backed up cause its gone now")
   script.Print("The Magic Contnues--Supported Release")
@@ -460,8 +465,9 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.1, 0)
-  script.Print("JBSourcery Version 2.3.5")
-  script.Print("Install of New Magic Complete")
+  script.Print("JBSourcery Version 2.4")
+  script.Print("JBSourcery Powered By Trinity")
+  script.Print("Installation complete!")
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:
