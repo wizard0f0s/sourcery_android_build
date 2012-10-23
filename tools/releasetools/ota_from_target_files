@@ -422,10 +422,10 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*                                             *")
   script.Print("*    Please goto info center and read news    *")
   script.Print("*                 JBSourcery                  *")
-  script.Print("*                    2.5.1                    *")
+  script.Print("*                    3.0                      *")
   script.Print("***********************************************")
-  script.Print("Hope you Backed up cause its gone now")
-  script.Print("The Magic Contnues--UnSupported Release")
+  script.Print("Welcome to the next level of the Sourcery Experience")
+  script.Print("The Magic Contnues--Jelly Bean 4.1.2")
 
   if "selinux_fc" in OPTIONS.info_dict:
     WritePolicyConfig(OPTIONS.info_dict["selinux_fc"], output_zip)
@@ -465,7 +465,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.1, 0)
-  script.Print("JBSourcery Version 2.5.1")
+  script.Print("JBSourcery Version 3.0")
   script.Print("JBSourcery Powered By Trinity")
   script.Print("Installation complete!")
   device_specific.FullOTA_InstallEnd()
