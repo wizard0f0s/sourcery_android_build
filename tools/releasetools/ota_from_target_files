@@ -471,6 +471,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.1, 0)
+  script.Print("No 4.2 Source isnt released yet!")
   script.Print("JBSourcery Version 3.1.5")
   script.Print("JBSourcery Powered By Trinity")
   script.Print("Installation complete!")
