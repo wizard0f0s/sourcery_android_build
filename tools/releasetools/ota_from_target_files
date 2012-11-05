@@ -422,6 +422,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*-CM toggles-only show lte or 2g if supported-*")
   script.Print("*      -Weather panel options redone-         *")
   script.Print("*        -upto Seven navbar keys-             *")
+  script.Print("*  -New Wallpaper app now included with rom-  *")
   script.Print("*        -Many other small fixes-             *")
   script.Print("*                                             *")
   script.Print("*                                             *")
