@@ -185,22 +185,24 @@ ifneq ($(strip $(TARGET_BUILD_APPS)),)
   $(call import-products,$(call get-product-makefiles,\
       $(SRC_TARGET_DIR)/product/AndroidProducts.mk))
 else
-  ifneq ($(CM_BUILD),)
-    $(call import-products, device/*/$(CM_BUILD)/cm.mk)
-  else
   # Read in all of the product definitions specified by the AndroidProducts.mk
-    # files in the tree.
-    #
-    #TODO: when we start allowing direct pointers to product files,
-    #    guarantee that they're in this list.
-    $(call import-products, $(get-all-product-makefiles))
-  endif
+  # files in the tree.
+  #
+  #TODO: when we start allowing direct pointers to product files,
+  #    guarantee that they're in this list.
+  $(call import-products, $(get-all-product-makefiles))
 endif # TARGET_BUILD_APPS
 $(check-all-products)
 
 ifneq ($(filter dump-products, $(MAKECMDGOALS)),)
 $(dump-products)
 $(error done)
+endif
+
+ifeq (a,b)
+$(info PRODUCTS -----------)
+$(foreach product, $(PRODUCTS), $(info $(PRODUCTS.$(product).PRODUCT_NAME)))# $(product)))
+$(error stop)
 endif
 
 # Convert a short name like "sooner" into the path to the product
@@ -282,11 +284,12 @@ ifneq (1,$(words $(PRODUCT_DEFAULT_DEV_CERTIFICATE)))
 endif
 endif
 
-# A list of words like <source path>:<destination path>.  The file at
-# the source path should be copied to the destination path when building
-# this product.  <destination path> is relative to $(PRODUCT_OUT), so
-# it should look like, e.g., "system/etc/file.xml".  The rules
-# for these copy steps are defined in config/Makefile.
+# A list of words like <source path>:<destination path>[:<owner>].
+# The file at the source path should be copied to the destination path
+# when building  this product.  <destination path> is relative to
+# $(PRODUCT_OUT), so it should look like, e.g., "system/etc/file.xml".
+# The rules for these copy steps are defined in build/core/Makefile.
+# The optional :<owner> is used to indicate the owner of a vendor file.
 PRODUCT_COPY_FILES := \
     $(strip $(PRODUCTS.$(INTERNAL_PRODUCT).PRODUCT_COPY_FILES))
 

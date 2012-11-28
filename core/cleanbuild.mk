@@ -78,6 +78,10 @@ else
     $(info Clean step: $(INTERNAL_CLEAN_STEP.$(step))) \
     $(shell $(INTERNAL_CLEAN_STEP.$(step))) \
    )
+  # If we are running mm/mmm, we should copy over the other clean steps too.
+  ifneq ($(ONE_SHOT_MAKEFILE),)
+    INTERNAL_CLEAN_STEPS := $(strip $(CURRENT_CLEAN_STEPS) $(steps))
+  endif
   steps :=
 endif
 CURRENT_CLEAN_BUILD_VERSION :=
@@ -207,13 +211,13 @@ endif
 dataclean: FILES := $(dataclean_files)
 dataclean:
 	$(hide) rm -rf $(FILES)
-	@echo "Deleted emulator userdata images."
+	@echo -e ${CL_GRN}"Deleted emulator userdata images."${CL_RST}
 
 .PHONY: installclean
 installclean: FILES := $(installclean_files)
 installclean: dataclean
 	$(hide) rm -rf $(FILES)
-	@echo "Deleted images and staging directories."
+	@echo -e ${CL_GRN}"Deleted images and staging directories."${CL_RST}
 
 ifeq "$(force_installclean)" "true"
   $(info *** Forcing "make installclean"...)

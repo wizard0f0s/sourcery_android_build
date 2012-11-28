@@ -28,20 +28,27 @@ PRODUCT_PACKAGES := \
     DrmProvider \
     Email \
     Exchange2 \
+    FusedLocation \
     Gallery2 \
     InputDevices \
     LatinIME \
-    Launcher2 \
-    Music \
-    Provision \
+    MusicFX \
     Phone \
-    QuickSearchBox \
     Settings \
     SystemUI \
     CalendarProvider \
     bluetooth-health \
     hostapd \
     wpa_supplicant.conf
+
+PRODUCT_PACKAGES += \
+    audio \
+    dhcpcd.conf \
+    network \
+    pand \
+    pppd \
+    sdptool \
+    wpa_supplicant
 
 PRODUCT_PACKAGES += \
     icu.dat
@@ -59,11 +66,6 @@ PRODUCT_PACKAGES += \
     local_time.default
 
 PRODUCT_COPY_FILES := \
-        system/bluetooth/data/audio.conf:system/etc/bluetooth/audio.conf \
-        system/bluetooth/data/auto_pairing.conf:system/etc/bluetooth/auto_pairing.conf \
-        system/bluetooth/data/blacklist.conf:system/etc/bluetooth/blacklist.conf \
-        system/bluetooth/data/input.conf:system/etc/bluetooth/input.conf \
-        system/bluetooth/data/network.conf:system/etc/bluetooth/network.conf \
         frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -72,6 +74,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 $(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk)
 $(call inherit-product-if-exists, external/cibu-fonts/fonts.mk)
 $(call inherit-product-if-exists, external/lohit-fonts/fonts.mk)
+$(call inherit-product-if-exists, external/naver-fonts/fonts.mk)
 $(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
 
