@@ -396,8 +396,8 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("***********************************************")
   script.Print("*                Team Sourcery                *")
   script.Print("*                                             *")
-  script.Print("*             Jelly Bean 4.2 ROM              *")
-  script.Print("*                 JOP40C-4.2                  *")
+  script.Print("*            Jelly Bean 4.2.1 ROM             *")
+  script.Print("*                JOP40D-4.2.1                 *")
   script.Print("*                                             *")
   script.Print("*     THIS IS A TEST BUILD NOT FOR PUBLIC     *")
   script.Print("*                                             *")
@@ -407,7 +407,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*                  4.0(test)                  *")
   script.Print("***********************************************")
   script.Print("Welcome to the Sourcery Experience!")
-  script.Print("The Magic Contnues--Jelly Bean 4.2")
+  script.Print("The Magic Continues--Jelly Bean 4.2.1")
   if OPTIONS.wipe_user_data:
     script.FormatPartition("/data")
 
