@@ -404,7 +404,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*                                             *")
   script.Print("*    Please goto info center and read news    *")
   script.Print("*                 JBSourcery                  *")
-  script.Print("*               4.0 PreRelease                *")
+  script.Print("*              4.0 PreRelease 3               *")
   script.Print("***********************************************")
   script.Print("Welcome to the Sourcery Experience!")
   script.Print("The Magic Continues--Jelly Bean 4.2.1")
