@@ -400,7 +400,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*                JOP40D-4.2.1                 *")
   script.Print("*                                             *")
   script.Print("*     Welcome to the Initial Release of       *")
-  script.Print("*              JBSourcery V-4.0               *")
+  script.Print("*              JBSourcery V-4.1               *")
   script.Print("*                                             *")
   script.Print("*                                             *")
   script.Print("*Install Gapps-let market restore than reboot *")
@@ -408,7 +408,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*                 Experience                  *")
   script.Print("*                                             *")
   script.Print("*                 JBSourcery                  *")
-  script.Print("*                    4.0                      *")
+  script.Print("*                    4.1                      *")
   script.Print("***********************************************")
   script.Print("Welcome to the Sourcery Experience!")
   script.Print("The Magic Continues--Jelly Bean 4.2.1")
@@ -441,8 +441,8 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.ShowProgress(0.2, 10)
   script.WriteRawImage("/boot", "boot.img")
 
-  script.Print("JBSourcery Version 4.0")
-  script.Print("Installation complete!")
+  script.Print("JBSourcery Version 4.1")
+  script.Print("More Magic More Fun!")
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:
