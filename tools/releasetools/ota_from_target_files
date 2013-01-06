@@ -399,8 +399,8 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*                 Jelly Bean                  *")
   script.Print("*                JOP40D-4.2.1                 *")
   script.Print("*                                             *")
-  script.Print("*     Welcome to the Initial Release of       *")
-  script.Print("*              JBSourcery V-4.1               *")
+  script.Print("*                                             *")
+  script.Print("*              JBSourcery V-4.2               *")
   script.Print("*                                             *")
   script.Print("*                                             *")
   script.Print("*Install Gapps-let market restore than reboot *")
@@ -408,10 +408,10 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*                 Experience                  *")
   script.Print("*                                             *")
   script.Print("*                 JBSourcery                  *")
-  script.Print("*                    4.1                      *")
+  script.Print("*                    4.2                      *")
   script.Print("***********************************************")
   script.Print("Welcome to the Sourcery Experience!")
-  script.Print("The Magic Continues--Jelly Bean 4.2.1")
+  script.Print("The Magic Continues--Jelly Bean 4.2.1_r1")
   if OPTIONS.wipe_user_data:
     script.FormatPartition("/data")
 
@@ -421,7 +421,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.FormatPartition("/system")
   script.Mount("/system")
   script.ShowProgress(0.5, 40)
-  script.Print("Installing JBSourcery")
+  script.Print("Installing JBSourcery..........")
   script.UnpackPackageDir("system", "/system")
 
   symlinks = CopySystemFiles(input_zip, output_zip)
@@ -441,8 +441,10 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.ShowProgress(0.2, 10)
   script.WriteRawImage("/boot", "boot.img")
 
-  script.Print("JBSourcery Version 4.1")
-  script.Print("More Magic More Fun!")
+  script.Print("JBSourcery Version 4.2")
+  script.Print("Thank You For Using JBSourcery")
+  script.Print("Dont Forget to install a Gapps Package.")
+  script.Print("Have Fun and be Sourcerized!!!")
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:
