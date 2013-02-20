@@ -400,7 +400,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*              JOP40G-4.2.2_r1                *")
   script.Print("*                                             *")
   script.Print("*                                             *")
-  script.Print("*             JBSourcery V-4.5.5              *")
+  script.Print("*              JBSourcery V-4.6               *")
   script.Print("*                                             *")
   script.Print("*                                             *")
   script.Print("*Install Gapps-let market restore than reboot *")
@@ -441,7 +441,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.ShowProgress(0.2, 10)
   script.WriteRawImage("/boot", "boot.img")
 
-  script.Print("JBSourcery Version 4.5.5")
+  script.Print("JBSourcery Version 4.6")
   script.Print("Thank You For Using JBSourcery")
   script.Print("Dont Forget to install a Gapps Package.")
   script.Print("***Experimental***")
